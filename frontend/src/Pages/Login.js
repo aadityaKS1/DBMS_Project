@@ -3,15 +3,15 @@ import JoinAsOrganization from './JoinAsOrganization'
 import JoinAsVolunteer from './JoinAsVolunteer'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import SignUpComponent from '../Components/SignUpComponent'
-function SignUp() {
+import LoginComponent from '../Components/LoginComponenet'
+function Login() {
     return (
         <>
         <Navbar/>
-        <SignUpComponent/>
+        <LoginComponent/>
         <Footer/>
         </>
     )
 }
 
-export default SignUp
+export default Login

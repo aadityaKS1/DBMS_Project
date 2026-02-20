@@ -1,15 +1,12 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import Vol_dashboard_overview from '../Components/DashboardComponents/VolunteerDashboard/vol_dashboard_overview'
-import VolMainSection from '../Components/DashboardComponents/VolunteerDashboard/vol_main_section'
-
+import Volunteer_dashboard from "../Components/Volunteer_dashboard"
 const VolunteerDashboard = () => {
   return (
     <div>
         <Navbar />
-        <Vol_dashboard_overview />
-        <VolMainSection />
+        <Volunteer_dashboard />
         <Footer />
     </div>
   )

@@ -55,6 +55,12 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
 ROOT_URLCONF = "backend.urls"
 
 TEMPLATES = [
@@ -85,8 +91,7 @@ DATABASES = {
         "USER": "postgres",
         "PASSWORD": "admin@12345",
         "HOST": "localhost", 
-        "PORT": "5432", 
-        
+        "PORT": "5432",       
     }
 }
 

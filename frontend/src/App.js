@@ -3,17 +3,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home"
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
-import SignUp from "./Pages/SignUp";
+import Login from "./Pages/Login";
 import Damages from "./Pages/Damages";
 import JoinAsOrganization from "./Pages/JoinAsOrganization";
 import JoinAsVolunteer from "./Pages/JoinAsVolunteer";
 import VerifyEmail from "./Pages/VerifyEmail";
 import Donate from "./Pages/Donate";
 import Report from "./Pages/Report";
-import OrgDashboard from './Pages/OrgDashboard'
-import Organization_dashboard from "./Pages/Organization_dashboard";
+import OrganizationDashboard from "./Pages/OrganizationDashboard";
 import VolunteerDashboard from "./Pages/VolunteerDashboard";
-import SignUpComponent from "./Components/SignUpComponent";
+import LoginComponent from "./Components/LoginComponenet";
 import Event_details from "./Pages/Event_details";
 import Attendance from './Pages/Attendance'
 
@@ -36,8 +35,8 @@ function App() {
       element: <Damages />
     },
     {
-      path: "/signup",
-      element: <SignUp />
+      path: "/login",
+      element: <Login />
     },
     {
       path: "/contact",
@@ -65,7 +64,7 @@ function App() {
     },
     {
       path: "/club",
-      element: <Organization_dashboard />
+      element: <OrganizationDashboard />
     },
     {
       path: "/event/:id",
