@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +27,7 @@ SECRET_KEY = "django-insecure-dm4sm7h-xlo+asdex#-t7hw&r1ah45ihapdxo3%-10t+#k+w3l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -54,8 +53,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -86,28 +83,18 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-#postgresql://dbms_project_zh20_user:VsiErUOm3JuOX3Fxl6K0xoowpNH0LoUW@dpg-d6c8j5ntn9qs73d3ro0g-a.oregon-postgres.render.com/dbms_project_zh20
-if os.environ.get("postgresql://dbms_project_zh20_user:VsiErUOm3JuOX3Fxl6K0xoowpNH0LoUW@dpg-d6c8j5ntn9qs73d3ro0g-a.oregon-postgres.render.com/dbms_project_zh20"):
-    DATABASES = {
-        "default": dj_database_url.config(
-            conn_max_age=600,
-            ssl_require=True,
-        )
-    }
-else:
-    # local development fallback
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": "dbms",
-            "USER": "postgres",
-            "PASSWORD": "admin@12345",
-            "HOST": "localhost",
-            "PORT": "5432",
-        }
-    }
 
-DATABASES["default"]=dj_database_url.parse("postgresql://dbms_project_zh20_user:VsiErUOm3JuOX3Fxl6K0xoowpNH0LoUW@dpg-d6c8j5ntn9qs73d3ro0g-a.oregon-postgres.render.com/dbms_project_zh20")
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "dbms",
+        "USER": "postgres",
+        "PASSWORD": "admin@12345",
+        "HOST": "localhost", 
+        "PORT": "5432",       
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -143,7 +130,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = "static/"
